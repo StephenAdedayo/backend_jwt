@@ -5,6 +5,8 @@ const sendMail = require("../utils/email");
 
 const registerUser = async (req, res) => {
   try {
+
+    
     const { fullName, email, phone, password } = req.body;
 
     const userExists = await User.findOne({ email });
@@ -189,7 +191,7 @@ const forgotPasswordUser = async (req, res) => {
 
 
 const forgotPasswordAdmin = async (req, res) => {
-  const { email } = req.body;
+  const { email } = req.body; 
 
   const admin = await User.findOne({ email, isAdmin : true });
 
